@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>我的二维码</title>
+	</head>
+	<link href="wky.js"  rel="stylesheet"/>
+	<body>
+		<div id="qr">
+			<div id="i" style="position: absolute;left: 100px;top: 100px; ">
+				<img src="images/enemy1.png" />
+			</div>
+		</div>
+		<input type="text" id="t"/>
+		<br />
+		<br />
+		<button onclick="change()">
+			点击更换二维码
+		</button>
+	</body>
+	<script src="qrcode.js"></script>
+	<script src="wky.js"></script>
+	<script>
+		var qrcode = new QRCode('qr', {
+			colorDark : "pink"
+		})
+		qrcode.makeCode("陈睿曦")
+		var change = function() {
+			qrcode.makeCode(t.value)
+		}
+	</script>
+</html>
